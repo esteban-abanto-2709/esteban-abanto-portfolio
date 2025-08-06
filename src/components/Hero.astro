@@ -7,76 +7,59 @@
   class="min-h-screen flex items-center justify-center px-4 pt-20"
 >
   <div class="max-w-7xl mx-auto w-full">
-    <div class="glass-hero p-12 rounded-3xl">
+    <div
+      class="p-12 rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl transition"
+    >
       <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="space-y-6">
-          <div class="space-y-2">
-            <p class="text-gray-400 text-lg font-light">Hola,</p>
-            <h1 class="text-5xl lg:text-6xl font-bold text-white leading-tight">
+        <div class="space-y-8">
+          <div class="space-y-3">
+            <p class="text-gray-400 text-base sm:text-lg">Hola,</p>
+            <h1
+              class="text-5xl sm:text-6xl font-extrabold text-white leading-tight whitespace-nowrap"
+            >
               Soy <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400"
                 >Esteban Abanto</span
               >
             </h1>
-            <p class="text-xl lg:text-2xl text-gray-300 font-light max-w-2xl">
-              Desarrollador Web & Game Dev con enfoque en experiencias digitales
-              creativas.
+            <h2 class="text-xl sm:text-2xl text-emerald-400 font-medium">
+              Desarrollador de Software
+            </h2>
+            <p class="text-gray-300 max-w-xl leading-relaxed">
+              Tengo experiencia construyendo aplicaciones web modernas,
+              videojuegos interactivos y soluciones full stack. Me especializo
+              en crear productos digitales con enfoque en rendimiento, diseño y
+              experiencia de usuario.
             </p>
           </div>
 
-          <div class="flex flex-wrap gap-3">
-            <span
-              class="px-4 py-2 bg-emerald-500/20 text-emerald-300 rounded-full text-sm font-medium border border-emerald-500/30"
-            >
-              • Frontend
-            </span>
-            <span
-              class="px-4 py-2 bg-cyan-500/20 text-cyan-300 rounded-full text-sm font-medium border border-cyan-500/30"
-            >
-              • Juegos Interactivos
-            </span>
-            <span
-              class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium border border-purple-500/30"
-            >
-              • Full Stack
-            </span>
-          </div>
-
-          <div class="flex gap-4 pt-4">
+          <div class="flex flex-wrap gap-4 pt-2">
             <a
               href="#projects"
-              class="premium-button px-8 py-4 rounded-2xl text-white font-semibold text-lg"
+              class="bg-gradient-to-br from-emerald-500 to-cyan-500 hover:opacity-90 text-white px-6 py-3 rounded-xl text-sm font-semibold flex items-center gap-2 shadow-lg transition"
             >
               Ver Proyectos
             </a>
             <a
-              href="#contact"
-              class="secondary-button px-8 py-4 rounded-2xl text-white font-semibold text-lg"
+              href="/EstebanAbantoCV.pdf"
+              download
+              class="bg-white/10 hover:bg-white/20 border border-white/20 text-white px-6 py-3 rounded-xl text-sm font-medium flex items-center gap-2 transition"
             >
-              Contáctame
+              Descargar CV
             </a>
           </div>
         </div>
 
         <div class="flex justify-center lg:justify-end">
-          <div class="relative">
+          <div class="relative w-80 h-80">
             <div
-              class="w-80 h-80 rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center backdrop-blur-sm"
+              class="w-full h-full rounded-full bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 border border-white/10 flex items-center justify-center backdrop-blur-sm shadow-inner overflow-hidden"
             >
-              <div
-                class="w-64 h-64 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 border border-white/20 flex items-center justify-center text-8xl"
-              >
-                👨‍💻
-              </div>
-            </div>
-
-            <div
-              class="absolute -top-4 -right-4 w-8 h-8 bg-emerald-500 rounded-full animate-pulse"
-            >
-            </div>
-            <div
-              class="absolute -bottom-4 -left-4 w-6 h-6 bg-cyan-500 rounded-full animate-pulse"
-            >
+              <img
+                src="/avatar.webp"
+                alt="Esteban Abanto"
+                class="w-64 h-64 object-cover rounded-full border border-white/20"
+              />
             </div>
           </div>
         </div>
