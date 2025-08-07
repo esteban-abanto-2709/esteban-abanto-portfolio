@@ -4,23 +4,24 @@
 
 <section id="contact" class="py-24 px-4">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-white mb-8">Contáctame</h2>
-    <p class="text-gray-400 mb-12">
-      ¿Tienes un proyecto o colaboración en mente? Ponte en contacto conmigo.
-    </p>
+    <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Contáctame</h2>
 
     <div class="glass-card p-8 rounded-2xl border border-white/10">
-      <!-- Email con botón de copiar -->
+      <p class="text-gray-400 mb-12 text-base md:text-lg leading-relaxed">
+        ¿Tienes un proyecto o colaboración en mente? <br />
+        Si crees que tu idea encaja con mi perfil, coordinemos y <br />
+        veamos si podemos trabajar juntos.
+      </p>
       <div
-        class="flex items-center justify-center gap-4 mb-8 p-4 bg-white/5 rounded-xl border border-white/10"
+        class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 p-4 bg-white/5 rounded-xl border border-white/10"
       >
-        <span class="text-white text-lg font-medium"
-          >esteban.abanto.2709@gmail.com</span
-        >
+        <span class="text-white text-lg font-medium text-center sm:text-left">
+          esteban.abanto.2709@gmail.com
+        </span>
         <button
           id="copyEmailBtn"
           onclick="copyEmail()"
-          class="p-2 bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 rounded-lg border border-emerald-500/30 transition-all duration-200"
+          class="copy-button"
           title="Copiar email"
         >
           <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -31,17 +32,14 @@
         </button>
       </div>
 
-      <div
-        id="copyNotification"
-        class="hidden mb-4 p-2 bg-emerald-500/20 text-emerald-300 rounded-lg border border-emerald-500/30"
-      >
+      <div id="copyNotification" class="copy-notification hidden">
         ✓ Email copiado al clipboard
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <a
           href="mailto:esteban.abanto.dev@gmail.com?subject=Oportunidad laboral&body=Hola Esteban,%0A%0AMe interesa conocer más sobre tu perfil profesional.%0A%0ASaludos"
-          class="flex items-center justify-center gap-3 p-4 bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 rounded-xl border border-blue-500/30 transition-all duration-200 font-medium"
+          class="contact-btn bg-blue-500/20 hover:bg-blue-500/30 text-blue-300 border-blue-500/30"
         >
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -54,7 +52,7 @@
         <a
           href="https://wa.me/51970267420?text=Hola%20Esteban%2C%20vi%20tu%20portafolio%20y%20me%20interesa%20conocer%20más%20sobre%20tu%20perfil%20profesional."
           target="_blank"
-          class="flex items-center justify-center gap-3 p-4 bg-green-500/20 hover:bg-green-500/30 text-green-300 rounded-xl border border-green-500/30 transition-all duration-200 font-medium"
+          class="contact-btn bg-green-500/20 hover:bg-green-500/30 text-green-300 border-green-500/30"
         >
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -67,7 +65,7 @@
         <a
           href="https://www.linkedin.com/in/esteban-abanto/"
           target="_blank"
-          class="flex items-center justify-center gap-3 p-4 bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 rounded-xl border border-cyan-500/30 transition-all duration-200 font-medium"
+          class="contact-btn bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border-cyan-500/30"
         >
           <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
             <path
@@ -87,32 +85,23 @@
     navigator.clipboard
       .writeText(email)
       .then(() => {
-        // Mostrar notificación
         const notification = document.getElementById("copyNotification");
-        notification.classList.remove("hidden");
-
-        // Cambiar el icono temporalmente
         const btn = document.getElementById("copyEmailBtn");
-        btn.innerHTML = `
-      <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-      </svg>
-    `;
-        btn.classList.add("bg-emerald-500/40");
 
-        // Volver al estado original después de 2 segundos
+        notification.classList.remove("hidden");
+        btn.classList.add("bg-emerald-500/40");
+        btn.innerHTML = `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+        </svg>`;
+
         setTimeout(() => {
           notification.classList.add("hidden");
-          btn.innerHTML = `
-        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
-        </svg>
-      `;
           btn.classList.remove("bg-emerald-500/40");
+          btn.innerHTML = `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>`;
         }, 2000);
       })
-      .catch((err) => {
-        console.error("Error al copiar email: ", err);
-      });
+      .catch((err) => console.error("Error al copiar email: ", err));
   }
 </script>
