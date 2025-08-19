@@ -3,4 +3,5 @@ export interface ProjectItemProps {
   description: string;
   techStack: string[];
   link: string;
+  year: number;
 }

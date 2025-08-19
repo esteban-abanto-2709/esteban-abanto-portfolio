@@ -1,14 +1,14 @@
 ---
 import type { ProjectItemProps } from "@/types";
-
-const { title, description, techStack, link } = Astro.props as ProjectItemProps;
+const { title, description, techStack, link, year } = Astro.props as ProjectItemProps;
 ---
 
 <div
   class="glass-card p-6 rounded-2xl border border-white/10 flex flex-col justify-between"
 >
   <div>
-    <h3 class="text-2xl font-semibold text-white mb-2">{title}</h3>
+    <h3 class="text-2xl font-semibold text-white mb-1">{title}</h3>
+    <p class="text-xs text-gray-400 mb-2">{year}</p>
     <p class="text-gray-300 mb-4">{description}</p>
     <div class="flex flex-wrap gap-2 mb-4">
       {techStack.map((tech) => <span class="badge-tech">{tech}</span>)}
