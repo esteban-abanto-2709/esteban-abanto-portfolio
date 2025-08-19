@@ -19,9 +19,8 @@
       </div>
     </div>
 
-    <!-- Navegación -->
     <nav class="flex items-center gap-6 text-sm font-medium" id="nav-links">
-      <a href="#about" class="nav-link" data-section="about">Sobre mí</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experiencia</a>
       <a href="#projects" class="nav-link" data-section="projects">Proyectos</a>
       <a href="#contact" class="nav-link" data-section="contact">Contacto</a>
     </nav>
@@ -33,7 +32,6 @@
 
     function onScroll() {
       let scrollY = window.scrollY;
-
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.offsetHeight;
@@ -49,6 +47,17 @@
         }
       });
     }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.section;
+        const target = document.getElementById(targetId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
 
     document.addEventListener("scroll", onScroll);
     window.addEventListener("load", onScroll);
