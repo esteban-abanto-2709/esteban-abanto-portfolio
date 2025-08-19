@@ -6,29 +6,29 @@
   class="fixed top-6 left-1/2 transform -translate-x-1/2 z-50 w-[90vw] max-w-5xl px-6 py-4 rounded-2xl backdrop-blur-md bg-white/5 border border-white/10 shadow-lg"
 >
   <div class="flex items-center justify-between">
-    <!-- Logo + Nombre -->
-    <div class="flex items-center gap-3">
+    <button class="flex items-center gap-3 cursor-pointer" type="button" data-section="hero">
       <div
         class="w-10 h-10 bg-gradient-to-br from-emerald-500 to-cyan-500 rounded-full flex items-center justify-center text-white font-bold shadow-inner"
       >
         EA
       </div>
-      <div class="flex flex-col leading-tight">
+      <div class="flex flex-col leading-tight text-left">
         <span class="text-white font-semibold text-sm">Esteban Abanto</span>
         <span class="text-gray-400 text-xs">Desarrollador de software</span>
       </div>
-    </div>
+    </button>
 
     <nav class="flex items-center gap-6 text-sm font-medium" id="nav-links">
-      <a href="#experience" class="nav-link" data-section="experience">Experiencia</a>
-      <a href="#projects" class="nav-link" data-section="projects">Proyectos</a>
-      <a href="#contact" class="nav-link" data-section="contact">Contacto</a>
+      <button class="nav-link cursor-pointer" type="button" data-section="experience">Experiencia</button>
+      <button class="nav-link cursor-pointer" type="button" data-section="projects">Proyectos</button>
+      <button class="nav-link cursor-pointer" type="button" data-section="contact">Contacto</button>
     </nav>
   </div>
 
   <script type="module" is:inline>
+    const header = document.querySelector("header");
+    const navLinks = header.querySelectorAll("button[data-section]");
     const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".nav-link");
 
     function onScroll() {
       let scrollY = window.scrollY;
@@ -49,8 +49,7 @@
     }
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
+      link.addEventListener("click", () => {
         const targetId = link.dataset.section;
         const target = document.getElementById(targetId);
         if (target) {
